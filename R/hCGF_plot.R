@@ -8,7 +8,7 @@
 #' \code{Multivariate_CGF_PLot} estimates and provides confidence region for average (or any linear combination)
 #' of third/fourth derivatives of empirical cumulant function at the points \eqn{t = t^*1_p}.
 #' Plots for \eqn{p = 2, 3, \dots, 10} will be faster to obtain, as confidence regions and other necessary parameters are available in
-#'  \code{mt3_lst_param.RDATA} and \code{mt4_lst_param.RDATA}.
+#'  \code{mt3_lst_param.rda} and \code{mt4_lst_param.rda}.
 #'  Higher dimension requires expensive computational cost.
 #'
 #' @param x Data matrix of size \eqn{n \times p}
@@ -45,9 +45,9 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
   } else {
 
     if (p %in% 1:5){
-      load("data/mt3_lst_param.RDATA")
+      load("data/mt3_lst_param.rda")
     } else {
-      load("data/mt3_lst_param2.RDATA")
+      load("data/mt3_lst_param2.rda")
     }
 
     lst <- mt3_lst_param[[p]]
@@ -113,12 +113,12 @@ d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
   } else {
 
     if (p %in% 1:6){
-      load("data/mt4_lst_param.RDATA")
+      load("data/mt4_lst_param.rda")
     } else {
       if (p == 10){
-        load("data/mt4_lst_param10.RDATA")
+        load("data/mt4_lst_param10.rda")
       } else {
-        load("data/mt4_lst_param2.RDATA")
+        load("data/mt4_lst_param2.rda")
       }
     }
 
