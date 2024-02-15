@@ -9,7 +9,7 @@ Description: Implementation of graphical methods to find evidences of non-normal
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-SysDataCompression: gzip
+SysDataCompression: bzip2
 Imports: Rdpack, ggplot2, stats, Matrix, MatrixExtra, MASS
 RdMacros: Rdpack
 Depends: R (>= 3.5.0)
