@@ -5,7 +5,7 @@
 #'
 #' @name Univariate_CGF_plot
 #' @param x Univariate data
-#' @param alpha Significant level (default is .05)
+#' @param alpha Significant level (default is \eqn{.05})
 #' @param method string, \code{"T3"} used the third derivatives, and \code{"T4"} uses the fourth derivatives.
 #'
 #'
@@ -55,26 +55,26 @@ dhCGF_plot1D <- function(x, alpha = 0.05, method){
          ylab = bquote(T[3]),
          ylim = c(-ylimt3, ylimt3)
     )
-    lines(bigt, -bandt3, lty = 6, lwd = 2, col = "darkorange")
-    lines(bigt, bandt3, lty = 6, lwd = 2, col = "darkorange")
-    legend("top", c("T3","Probability bands"),
+    graphics::lines(bigt, -bandt3, lty = 6, lwd = 2, col = "darkorange")
+    graphics::lines(bigt, bandt3, lty = 6, lwd = 2, col = "darkorange")
+    graphics::legend("top", c("T3","Probability bands"),
            lwd = c(2, 2),
            lty = c(1, 6), col = c("blue", "darkorange"),
            merge = TRUE, y.intersp = 2,text.width = .6)
-    title(main = bquote(T[3] ~"plot"),
+    graphics::title(main = bquote(T[3] ~"plot"),
           adj = 0)
   } else {
     plot(bigt, T4, type = "l", lty = 1, lwd = 2, col = "blue",
          xlab = "t", ylab = bquote(T[4]),
          ylim = c(-ylimt4, ylimt4)
          )
-    lines(bigt, bandt4, lty = 6, lwd = 2, col = "darkorange")
-    lines(bigt, -bandt4, lty = 6, lwd = 2, col = "darkorange")
-    legend("top", c("T4","Probability bands"),
+    graphics::lines(bigt, bandt4, lty = 6, lwd = 2, col = "darkorange")
+    graphics::lines(bigt, -bandt4, lty = 6, lwd = 2, col = "darkorange")
+    graphics::legend("top", c("T4","Probability bands"),
            lwd = c(2, 2),
            lty = c(1, 6), col = c("blue","orange"),
            merge = TRUE, y.intersp = 2, text.width = .6)
-    title(main = bquote(T[4] ~"plot"),
+    graphics::title(main = bquote(T[4] ~"plot"),
           adj = 0)
   }
 

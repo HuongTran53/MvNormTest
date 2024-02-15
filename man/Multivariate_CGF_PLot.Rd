@@ -15,6 +15,8 @@ d4hCGF_plot(x, l = NULL, alpha = 0.05)
 
 \item{l}{Vector of linear combination, having length is the number of unique third/fourth
 derivatives. Default is \code{NULL} where the algorithm will use the average of distinct derivatives.}
+
+\item{alpha}{Significant level (default is \eqn{.05})}
 }
 \value{
 \code{d3hCGF_plot} returns plot relying in third derivatives.
@@ -32,7 +34,6 @@ Plots for \eqn{p = 2, 3, \dots, 10} will be faster to obtain, as confidence regi
  Higher dimension requires expensive computational cost.
 }
 \examples{
-# Normal distribution
 set.seed(1234)
 p <- 3
 x <- MASS::mvrnorm(500, rep(0, p), diag(p))

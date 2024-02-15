@@ -12,7 +12,7 @@
 #' kurtosis(y)
 kurtosis <- function(x){
   nx <- length(x)
-  sdx <- sd(x)
+  sdx <- stats::sd(x)
   y <- (x - mean(x))/sdx
   k <- sum(y^4)
   k <- 1/(nx-1) * k
@@ -38,7 +38,7 @@ kurtosis <- function(x){
 #'
 skewness <- function(x) {
   nx <- length(x)
-  sdx <- sd(x)
+  sdx <- stats::sd(x)
   y <- (x - mean(x))/sdx
   k <- sum(y^3)
   k <- 1/(nx - 1) * k
@@ -76,7 +76,7 @@ skewness <- function(x) {
 #' \item{\code{iteration}: Number of iteration. }
 #' }
 #'
-#' @seealso \code{\link[=skewness]{skewness()}}, \code{\link[=kurtorsis]{kurtosis()}}
+#' @seealso \code{\link[=skewness]{skewness()}}, \code{\link[=kurtosis]{kurtosis()}}
 #' @export
 #'
 #' @examples
@@ -110,7 +110,7 @@ linear_transform <- function(x, l0  = rep(1, ncol(x)), method = "both",
 
   #### Data standardization ##################
   l0 <- l0 / sqrt(sum(t(l0) %*% l0))
-  S <- cov(x)
+  S <- stats::cov(x)
   m <- matrix(rep(colMeans(x), nx), byrow = T, ncol = p)
   chol.S <- chol(S)  # 50% faster
   A <-  backsolve(r = chol.S, x = diag(p))

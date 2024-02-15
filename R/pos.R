@@ -32,7 +32,8 @@
 #'
 #' Similar notation is applied when fourth derivatives is used.
 #' @export
-#' @examples mt3_rev_pos(1, 2, 2, p = 3)
+#' @examples
+#' mt3_rev_pos(1, 2, 2, p = 3)
 #' p <- 3
 #' mt3_pos(p)
 #' mt4_pos(p)
@@ -78,7 +79,6 @@ mt3_rev_pos <- function(j1, j2, j3, p){
 #' @return \code{mt3_pos} an array contaning all position with respect to index of \eqn{j_1, j_2, j_3}.
 #'
 # @seealso \code{\link[=rev_pos]{rev_pos()}}
-#' @examples
 #' @export
 #'
 

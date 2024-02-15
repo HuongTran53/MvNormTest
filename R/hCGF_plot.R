@@ -14,14 +14,13 @@
 #' @param x Data matrix of size \eqn{n \times p}
 #' @param l Vector of linear combination, having length is the number of unique third/fourth
 #' derivatives. Default is \code{NULL} where the algorithm will use the average of distinct derivatives.
+#' @param alpha Significant level (default is \eqn{.05})
 #'
 #' @return \code{d3hCGF_plot} returns plot relying in third derivatives.
 #'
 #' @seealso \code{\link[=dhCGF_plot1D]{dhCGF_plot1D()}}
 #' @export
-#'
 #' @examples
-#' # Normal distribution
 #' set.seed(1234)
 #' p <- 3
 #' x <- MASS::mvrnorm(500, rep(0, p), diag(p))
@@ -74,13 +73,13 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
   plot(bigt, L3, ylim = c(-ylim, ylim), col = "blue", lty = 1, type = "l", lwd = 2,
        ylab = bquote(L[3]),
        xlab = "t")
-  lines(bigt, band1, col = "orange", lty = 6, lwd = 2)
-  lines(bigt, band2, col = "orange", lty = 6, lwd = 2)
-  legend("top", c("Probability  bands", expression(L[3])),
+  graphics::lines(bigt, band1, col = "orange", lty = 6, lwd = 2)
+  graphics::lines(bigt, band2, col = "orange", lty = 6, lwd = 2)
+  graphics::legend("top", c("Probability  bands", expression(L[3])),
          lty = c(6, 1), col = c("orange", "blue"),
          lwd = c(2, 2),
          merge = TRUE, y.intersp = 1.5, text.width = .6)
-  title(main = bquote(MT[3] ~"plot"),
+  graphics::title(main = bquote(MT[3] ~"plot"),
         adj = 0)
 
   til.L <- L3/sqrt(lst$varLtLs)
@@ -96,8 +95,6 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
 #'
 #' @return \code{d4hCGF_plot} returns plot relying in forth derivatives.
 #' @export
-#'
-#' @examples
 d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
 
   bigt <- seq(-1, 1, by = 0.05)
@@ -145,9 +142,9 @@ d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
   plot(bigt, L4, ylim = c(-ylim, ylim), col = "blue", lty = 1, type = "l", lwd = 2,
        ylab = bquote(L[4]),
        xlab = "t")
-  lines(bigt, band1, col = "orange", lty = 6, lwd = 2)
-  lines(bigt, band2, col = "orange", lty = 6, lwd = 2)
-  legend("top", c("Probability  bands", expression(L[4])),
+  graphics::lines(bigt, band1, col = "orange", lty = 6, lwd = 2)
+  graphics::lines(bigt, band2, col = "orange", lty = 6, lwd = 2)
+  graphics::legend("top", c("Probability  bands", expression(L[4])),
          lty = c(6, 1), col = c("orange", "blue"),
          lwd = c(2, 2),
          merge = TRUE, y.intersp = 1.5, text.width = .6)

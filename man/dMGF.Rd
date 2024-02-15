@@ -4,7 +4,7 @@
 \alias{dMGF}
 \title{Moment generating functions (MGF) of standard normal distribution.}
 \usage{
-dMGF(tab, t, coef = T)
+dMGF(tab, t, coef = TRUE)
 }
 \arguments{
 \item{tab}{dataframe whose whose columns are the components and the order of derivatives.}
@@ -34,6 +34,6 @@ For example,
 t <- rep(.2, 7)
 tab <- data.frame(j = 2, exponent = 4)
 dMGF(tab, t = t)
-dMGF(tab, t = t, coef = F)
+dMGF(tab, t = t, coef = FALSE)
 
 }

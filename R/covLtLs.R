@@ -11,8 +11,8 @@
 #' @param l vector of linear combination with length is the number of distinct derivatives, see \code{\link[=l_dhCGF]{l_dhCGF()}}.
 #' @param p dimension.
 #' @param bigt array of value \eqn{t^*} and \eqn{s^*}.
-#' @param sTtTs Covariance matrix of derivatives vector, see \code{\link[=covTsTt]{covTsTt()}}. Default is \code{NULL}, when the algorithm
-#' will call \code{\link[=mt3_covTsTt]{mt3_covTsTt()}} or \code{\link[=mt4_covTsTt]{mt4_covTsTt()}}.
+#' @param sTtTs Covariance matrix of derivatives vector, see \code{\link[=covTtTs]{covTtTs()}}. Default is \code{NULL}, when the algorithm
+#' will call \code{\link[=mt3_covTtTs]{mt3_covTtTs()}} or \code{\link[=mt4_covTtTs]{mt4_covTtTs()}}.
 #' @param seed Random seed to get the estimated of the supremum of the univariate Gaussian process obtained from the linear combination.
 #'
 #' @return

@@ -44,7 +44,7 @@ d3hCGF <- function(myt, x){
   nx <- nrow(x)
   p <- ncol(x)
   #standardize data: not using Cholesky decomposition
-  S <- cov(x)
+  S <- stats::cov(x)
 
   xbar <- colMeans(x)
   m <- matrix(rep(xbar, nx), byrow = T, ncol = p)
@@ -88,7 +88,7 @@ d4hCGF <- function(myt, x){
   nx <- nrow(x)
   p <- ncol(x)
   #standardize data: not using Cholesky decomposition
-  S <- cov(x)
+  S <- stats::cov(x)
   xbar <- colMeans(x)
   m <- matrix(rep(xbar, nx), byrow = T, ncol = p)
   x <- x - m
@@ -176,7 +176,7 @@ l_dhCGF <- function(p){
 #' dhCGF1D(t, x)
 #'
 dhCGF1D <- function(t, x){
-  z <- (x - mean(x))/sd(x)
+  z <- (x - mean(x))/stats::sd(x)
   nz <- length(z)
   pi <- c(exp(z*t))
   pbar <- 1/sum(exp(z * t))

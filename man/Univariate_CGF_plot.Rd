@@ -10,7 +10,7 @@ dhCGF_plot1D(x, alpha = 0.05, method)
 \arguments{
 \item{x}{Univariate data}
 
-\item{alpha}{Significant level (default is .05)}
+\item{alpha}{Significant level (default is \eqn{.05})}
 
 \item{method}{string, \code{"T3"} used the third derivatives, and \code{"T4"} uses the fourth derivatives.}
 }

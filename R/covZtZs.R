@@ -6,7 +6,6 @@
 #' together to obtain a vector, which (under normality assumption) approaches a normally distributed vector
 #' with zero mean and a covariance matrix.
 #' \code{covZtZs} calculates covariance between any two points \eqn{t} and \eqn{s} in \eqn{\mathbb{R}^p}.
-#' @details
 #' @param t,s  a vector of length \eqn{p}.
 # @param s a vector of length \eqn{p}.
 #' @param pos.matrix matrix contains information of position of any derivatives. Default is \code{NULL},
@@ -31,7 +30,7 @@ mt3_covZtZs <- function(t, s, pos.matrix = NULL){
   p <- length(t)
 
   if (is.null(pos.matrix)){
-    pos.matrix <- pos(p)
+    pos.matrix <- mt3_pos(p)
   }
 
   lT <- sum(unlist(lapply(2:(p +1), FUN = function(x) choose(x,k = 2))))

@@ -26,10 +26,10 @@
 #' t <- rep(.2, 7)
 #' tab <- data.frame(j = 2, exponent = 4)
 #' dMGF(tab, t = t)
-#' dMGF(tab, t = t, coef = F)
+#' dMGF(tab, t = t, coef = FALSE)
 #'
 #' @export
-dMGF <- function(tab, t, coef = T){ #upto j.num == 8
+dMGF <- function(tab, t, coef = TRUE){ #upto j.num == 8
   j <- as.numeric(tab[1])
   # j <- as.numeric(tab$Var1)
   j.num <- tab[2]

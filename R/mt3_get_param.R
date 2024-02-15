@@ -6,9 +6,9 @@
 #' of cumulant generating function. The set of availble parameters for test in dimensions \code{p = 1, 2,..., 10},
 #' test points \eqn{t = t^*1_p} with value of \eqn{t^*} in
 #' \code{bigt = seq(-1, 1, by = 0.05)/sqrt(p)} and \code{l} chosen as the average of distinct derivatives
-#' is available, see
-#' \code{\link[=data/mt3_lst_param.RDATA]{mt3_lst_param.RDATA}} and
-#' \code{\link[=data/mt4_lst_param.RDATA]{mt4_lst_param.RDATA}}.
+#' is available.
+# \code{\link[=data/mt3_lst_param.RDATA]{mt3_lst_param.RDATA}} and
+# \code{\link[=data/mt4_lst_param.RDATA]{mt4_lst_param.RDATA}}.
 #'
 #'
 #' @param p Dimension.

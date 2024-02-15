@@ -49,5 +49,5 @@ linear_transform(x, method = "kurtosis")$max_result
 linear_transform(x, method = "both")$max_result
 }
 \seealso{
-\code{\link[=skewness]{skewness()}}, \code{\link[=kurtorsis]{kurtosis()}}
+\code{\link[=skewness]{skewness()}}, \code{\link[=kurtosis]{kurtosis()}}
 }

@@ -9,8 +9,11 @@ Description: Implementation of graphical methods to find evidences of non-normal
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-LazyDataCompression: "bzip2"
-RoxygenNote: 7.2.3
 Imports: Rdpack, ggplot2, stats, Matrix, MatrixExtra, MASS
 RdMacros: Rdpack
-Depends: R (>= 3.5.0), Rdpack,ggplot2,stats, Matrix, MatrixExtra, MASS
+Depends: R (>= 3.5.0), R (<= 4.3.0), Rdpack,ggplot2,stats, Matrix, MatrixExtra, MASS
+RoxygenNote: 7.3.1
+URL: https://github.com/HuongTran53/MvNormTest/
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

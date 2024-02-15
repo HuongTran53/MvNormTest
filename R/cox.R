@@ -58,7 +58,7 @@ cox <- function(x, P = NULL, lambda = 0.5, x.dist = NULL) {
     }
   }
 
-  x <- (x - mean(x))/sd(x) #standardize data
+  x <- (x - mean(x))/stats::sd(x) #standardize data
 
   #merge all close data points and updata x
   if (!is.null(x.dist)){

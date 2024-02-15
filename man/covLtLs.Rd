@@ -17,8 +17,8 @@ mt4_covLtLs(l, p, bigt = seq(-1, 1, 0.05)/sqrt(p), sTtTs = NULL, seed = 1)
 
 \item{bigt}{array of value \eqn{t^*} and \eqn{s^*}.}
 
-\item{sTtTs}{Covariance matrix of derivatives vector, see \code{\link[=covTsTt]{covTsTt()}}. Default is \code{NULL}, when the algorithm
-will call \code{\link[=mt3_covTsTt]{mt3_covTsTt()}} or \code{\link[=mt4_covTsTt]{mt4_covTsTt()}}.}
+\item{sTtTs}{Covariance matrix of derivatives vector, see \code{\link[=covTtTs]{covTtTs()}}. Default is \code{NULL}, when the algorithm
+will call \code{\link[=mt3_covTtTs]{mt3_covTtTs()}} or \code{\link[=mt4_covTtTs]{mt4_covTtTs()}}.}
 
 \item{seed}{Random seed to get the estimated of the supremum of the univariate Gaussian process obtained from the linear combination.}
 }

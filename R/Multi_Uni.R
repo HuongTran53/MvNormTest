@@ -27,7 +27,7 @@ Multi.to.Uni <- function(x){
   nx <- nrow(x)
   p <- ncol(x)
   xbar <- colMeans(x)
-  S <- cov(x)
+  S <- stats::cov(x)
   inv.S <- solve(S)
   temp <- ((nx - 1)**2)/nx
   ##############
