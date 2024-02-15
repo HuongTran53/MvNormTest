@@ -34,7 +34,7 @@
 #' x <- rnorm(100, 2, 4)
 #' re <- cox(sort(x))
 #' plot(re$x, re$a, xlab = "x", ylab = "Estimated Score",
-#'  main = bquote("Normal distribution with sample size"~n==100))
+#'  main = "Estimator of score function")
 #' abline(0, 1)
 #'
 cox <- function(x, P = NULL, lambda = 0.5, x.dist = NULL) {

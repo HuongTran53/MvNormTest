@@ -28,7 +28,7 @@ derivatives with large value or high slope gives indication of non-normality.
 \code{Multivariate_CGF_PLot} estimates and provides confidence region for average (or any linear combination)
 of third/fourth derivatives of empirical cumulant function at the points \eqn{t = t^*1_p}.
 Plots for \eqn{p = 2, 3, \dots, 10} will be faster to obtain, as confidence regions and other necessary parameters are available in
- \code{mt3_lst_param.RDATA} and \code{mt4_lst_param.RDATA}.
+ \code{mt3_lst_param.rda} and \code{mt4_lst_param.rda}.
  Higher dimension requires expensive computational cost.
 }
 \examples{

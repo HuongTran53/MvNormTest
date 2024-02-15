@@ -44,11 +44,11 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
     warning("Heavy computation")
   } else {
 
-    if (p %in% 1:5){
-      load("data/mt3_lst_param.rda")
-    } else {
-      load("data/mt3_lst_param2.rda")
-    }
+    # if (p %in% 1:5){
+    #   load("data/mt3_lst_param.rda")
+    # } else {
+    #   load("data/mt3_lst_param2.rda")
+    # }
 
     lst <- mt3_lst_param[[p]]
 
@@ -57,7 +57,9 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
       tmp <- mt3_covLtLs(l= l, p = p, sTtTs = lst$l.sTtTs)
       lst$sLtLs <- tmp$sLtLs
       lst$m.supLt <- tmp$m.supLt
+      lst$varLtLs <- diag(lst$sLtLs)
     }
+
   }
 
   v3 <- lapply(bigt/sqrt(p),function(u) d3hCGF(myt = rep(u, p), x = x))
@@ -65,8 +67,8 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
 
 
   u <- sqrt(-2 *log(alpha))
-  band1 <- (u + lst$m.supLt)*sqrt(diag(lst$sLtLs))
-  band2 <- -(u + lst$m.supLt)*sqrt(diag(lst$sLtLs))
+  band1 <- (u + lst$m.supLt)*sqrt(lst$varLtLs)
+  band2 <- -(u + lst$m.supLt)*sqrt(lst$varLtLs)
   ylim <- max(max(abs(band1)), abs(L3))
 
   plot(bigt, L3, ylim = c(-ylim, ylim), col = "blue", lty = 1, type = "l", lwd = 2,
@@ -81,7 +83,7 @@ d3hCGF_plot <- function(x, l = NULL, alpha = 0.05){
   title(main = bquote(MT[3] ~"plot"),
         adj = 0)
 
-  til.L <- L3/sqrt(diag(lst$sLtLs))
+  til.L <- L3/sqrt(lst$varLtLs)
   deci <- ifelse(max(abs(til.L)) >= u + lst$m.supLt, "reject", "accept")
 
   return(deci)
@@ -112,15 +114,15 @@ d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
     warning("Heavy computation")
   } else {
 
-    if (p %in% 1:6){
-      load("data/mt4_lst_param.rda")
-    } else {
-      if (p == 10){
-        load("data/mt4_lst_param10.rda")
-      } else {
-        load("data/mt4_lst_param2.rda")
-      }
-    }
+    # if (p %in% 1:6){
+    #   load("data/mt4_lst_param.rda")
+    # } else {
+    #   if (p == 10){
+    #     load("data/mt4_lst_param10.rda")
+    #   } else {
+    #     load("data/mt4_lst_param2.rda")
+    #   }
+    # }
 
     lst <- mt4_lst_param[[p]]
 
@@ -128,6 +130,7 @@ d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
       tmp <- mt4_covLtLs(l= l, p = p, sTtTs = lst$l.sTtTs)
       lst$sLtLs <- tmp$sLtLs
       lst$m.supLt <- tmp$m.supLt
+      lst$varLtLs <- diag(lst$sLtLs)
     }
 
   }
@@ -136,8 +139,8 @@ d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
   L4 <- unlist(lapply(v4, function(v) sqrt(n) * sum(l*v)))
 
   u <- sqrt(-2 *log(alpha))
-  band1 <- (u + lst$m.supLt)*sqrt(diag(lst$sLtLs))
-  band2 <- -(u + lst$m.supLt)*sqrt(diag(lst$sLtLs))
+  band1 <- (u + lst$m.supLt)*sqrt(lst$varLtLs)
+  band2 <- -(u + lst$m.supLt)*sqrt(lst$varLtLs)
   ylim <- max(max(abs(band1)), abs(L4))
   plot(bigt, L4, ylim = c(-ylim, ylim), col = "blue", lty = 1, type = "l", lwd = 2,
        ylab = bquote(L[4]),
@@ -149,7 +152,7 @@ d4hCGF_plot <- function(x, l = NULL, alpha = 0.05){
          lwd = c(2, 2),
          merge = TRUE, y.intersp = 1.5, text.width = .6)
 
-  til.L <- L4/sqrt(diag(lst$sLtLs))
+  til.L <- L4/sqrt(lst$varLtLs)
   deci <- ifelse(max(abs(til.L)) >= u + lst$m.supLt, "reject", "accept")
   return(deci)
 }

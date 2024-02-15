@@ -25,14 +25,15 @@ dhCGF_plot1D <- function(x, alpha = 0.05, method){
   }
   bigt = seq(-1, 1, by = 0.05)
 
+  # load("data/mt3_lst_param.RData")
+  # load("data/mt4_lst_param.RData")
 
-  load("data/mt3_lst_param.RData")
-  load("data/mt4_lst_param.RData")
-
-  sT3 <- diag(mt3_lst_param$'1'$l.sTtTs)
+  sT3 <- mt3_lst_param$'1'$varLtLs
+  # sT3 <- diag(mt3_lst_param$'1'$l.sTtTs)
   m.supLt3 <- mt3_lst_param$'1'$m.supLt
 
-  sT4 <- diag(mt4_lst_param$'1'$l.sTtTs)
+  sT4 <- mt4_lst_param$'1'$varLtLs
+  # sT4 <- diag(mt4_lst_param$'1'$l.sTtTs)
   m.supLt4 <- mt4_lst_param$'1'$m.supLt
 
 
@@ -76,5 +77,6 @@ dhCGF_plot1D <- function(x, alpha = 0.05, method){
     title(main = bquote(T[4] ~"plot"),
           adj = 0)
   }
+
 }
 

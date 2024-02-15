@@ -57,7 +57,7 @@ set.seed(1)
 x <- rnorm(100, 2, 4)
 re <- cox(sort(x))
 plot(re$x, re$a, xlab = "x", ylab = "Estimated Score",
- main = bquote("Normal distribution with sample size"~n==100))
+ main = "Estimator of score function")
 abline(0, 1)
 
 set.seed(1)
