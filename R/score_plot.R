@@ -26,10 +26,10 @@
 #'
 score_plot1D <- function(x, P = NULL, lambda = .5, x.dist = NULL,ori.index = NULL){
   # Use .001 for x.dist
-  require(ggplot2)
-  require(stats)
-  require(Matrix)
-  require(MatrixExtra)
+  # require(ggplot2)
+  # require(stats)
+  # require(Matrix)
+  # require(MatrixExtra)
 
   nx <- length(x)
   if (is.unsorted(x) == T){

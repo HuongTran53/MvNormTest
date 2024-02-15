@@ -38,8 +38,8 @@
 #' abline(0, 1)
 #'
 cox <- function(x, P = NULL, lambda = 0.5, x.dist = NULL) {
-  require(Matrix)
-  require(MatrixExtra)
+  # require(Matrix)
+  # require(MatrixExtra)
 
   nx <- length(x)
 
