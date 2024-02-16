@@ -22,7 +22,7 @@ mt4_get_param(p, bigt = seq(-1, 1, by = 0.05)/sqrt(p), l = NULL)
 \item{\code{p}}{ Dimension.}
 \item{\code{lT}}{ Number of distinct third/fourth order derivatives.}
 \item{\code{sTtTs}}{ Two dimensional array, each element contains covariance
- matrix of vector of derivatives, the function called \code{\link[=mt3_covTtTs]{mt3_covTtTs()}}, \code{\link[=mt4_covTtTs]{mt4_covTtTs()}}}.
+matrix of vector of derivatives, the function called \code{\link[=mt3_covTtTs]{mt3_covTtTs()}}, \code{\link[=mt4_covTtTs]{mt4_covTtTs()}}}.
 \item{\code{l.sTtTs}}{ Covariance matrix of linear combination of distinct derivatives, the function called \code{\link[=mt3_covLtLs]{mt3_covLtLs()}}, \code{\link[=mt4_covLtLs]{mt4_covLtLs()}}.}
 \item{\code{m.supLT}}{ The Monte Carlo estimate of expected value supremum of the Gaussian process, see \code{\link[=mt4_covLtLs]{mt4_covLtLs()}}.
 }

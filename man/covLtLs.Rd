@@ -33,7 +33,7 @@ will call \code{\link[=mt3_covTtTs]{mt3_covTtTs()}} or \code{\link[=mt4_covTtTs]
 \description{
 Linear combination of third/fourth derivatives of CGF results in an asymptotically
 univariate Gaussian process with mean 0 and covariance between two points
- \eqn{t \in \mathbb{R}^p} and \eqn{s \in \mathbb{R}^p} is defined.
+\eqn{t \in \mathbb{R}^p} and \eqn{s \in \mathbb{R}^p} is defined.
 We are considering vector \eqn{t} and \eqn{s} as the form  \eqn{t = t^*1_p}
 and \eqn{s = s^*1_p}.
 }

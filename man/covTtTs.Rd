@@ -20,10 +20,10 @@ the function will call \code{\link[=mt3_pos]{mt3_pos()}} or \code{\link[=mt4_pos
 }
 \value{
 A 2 dimensional upper square triangular array, with size equals to length of \code{bigt},
- each position contains a covariance matrix of derivatives sequences between any two points \eqn{t = t^* 1_p} and
- \eqn{s = s^*1_p}.
- Diagonal of this array is the variance/covariance matrix of derivatives sequences, taking at points
- \eqn{t = t^*1_p}.
+each position contains a covariance matrix of derivatives sequences between any two points \eqn{t = t^* 1_p} and
+\eqn{s = s^*1_p}.
+Diagonal of this array is the variance/covariance matrix of derivatives sequences, taking at points
+\eqn{t = t^*1_p}.
 
 \code{mt3_covTsTt} returns result relating the use of third derivatives.
 
