@@ -45,8 +45,7 @@ d4hCGF_plot(x); title("Using fourth derivatives of CGF")
 
 ``` r
 df <- Multi.to.Uni(x)
-qqnorm(df$x.new); abline(0, 1)
-title("Transfromation to nearly independent unvariate sample and use Q-Q plot")
+qqnorm(df$x.new, main = "Transfromation to nearly independent unvariate sample, Q-Q plot"); abline(0, 1)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
