@@ -2,9 +2,16 @@ Package: MvNormTest
 Type: Package
 Title: Graphical Univariate/Multivariate Assessments for Normality Assumption 
 Version: 0.1.0
-Author: Huong Tran[aut, cre], Ravindra Khattree [aut] (<https://orcid.org/0000-0002-9305-2365>)
-Maintainer: Huong Tran <quynhhuong5335@gmail.com>
-Description: Implementation of graphical methods to find evidences of non-normality of a univariate/multivariate dataset. Those methods includes the assessments of score function, and derivatives cumulant generating functions. For the scenarios of multiviarate, beside the methods of transformation to univariate data, graphical assessments can also be applied through the plots of multivariate empirical cumulant functions. 
+Authors@R: c(
+    person("Huong", "Tran", email = "quynhhuong5335@gmail.com", role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0003-3828-3862")),
+    person("Ravindra", "Khattree", email = "khattree@oakland.edu", role = "aut", 
+    comment = c(ORCID = "0000-0002-9305-2365"))
+    )
+Description: Implementation of graphical methods to find evidences of non-normality of a univariate/multivariate dataset. 
+  Those methods includes the assessments of score function, and derivatives cumulant generating functions.
+  For the scenarios of multiviarate, beside the methods of transformation to univariate data,
+  graphical assessments can also be applied through the plots of multivariate empirical cumulant functions.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: Rdpack, ggplot2, stats, Matrix, MatrixExtra, MASS
