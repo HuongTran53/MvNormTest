@@ -33,13 +33,27 @@ devtools::install_github("HuongTran53/MvNormTest")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r }
 library(MvNormTest)
 set.seed(1234)
 x <- MASS::mvrnorm(1000, rep(0, 5), diag(5))
-par(mfrow = c(1, 2))
+```
+```{r}
 d3hCGF_plot(x); title("Using third derivatives of CGF")
+```
+
+```{r}
 d4hCGF_plot(x); title("Using fourth derivatives of CGF")
-## basic example code
+```
+
+```{r}
+df <- Multi.to.Uni(x)
+qqnorm(df$x.new); abline(0, 1)
+title("Transfromation to nearly independent unvariate sample and use Q-Q plot")
+```
+
+```{r}
+# Maximum skewness under linear transformation
+linear_transform(x, method = "skewness")$max_result
 ```
 

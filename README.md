@@ -27,15 +27,32 @@ This is a basic example which shows you how to solve a common problem:
 library(MvNormTest)
 set.seed(1234)
 x <- MASS::mvrnorm(1000, rep(0, 5), diag(5))
-par(mfrow = c(1, 2))
+```
+
+``` r
 d3hCGF_plot(x); title("Using third derivatives of CGF")
 #> [1] "accept"
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+``` r
 d4hCGF_plot(x); title("Using fourth derivatives of CGF")
 #> [1] "accept"
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ``` r
-## basic example code
+df <- Multi.to.Uni(x)
+qqnorm(df$x.new); abline(0, 1)
+title("Transfromation to nearly independent unvariate sample and use Q-Q plot")
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+``` r
+# Maximum skewness under linear transformation
+linear_transform(x, method = "skewness")$max_result
+#> [1] 0.00542609
 ```
