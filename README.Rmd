@@ -35,9 +35,10 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r }
 library(MvNormTest)
-set.seed(1234)
+set.seed(123)
 x <- MASS::mvrnorm(1000, rep(0, 5), diag(5))
 ```
+
 ```{r}
 d3hCGF_plot(x); title("Using third derivatives of CGF")
 ```

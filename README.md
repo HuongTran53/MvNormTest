@@ -25,7 +25,7 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(MvNormTest)
-set.seed(1234)
+set.seed(123)
 x <- MASS::mvrnorm(1000, rep(0, 5), diag(5))
 ```
 
@@ -54,5 +54,5 @@ title("Transfromation to nearly independent unvariate sample and use Q-Q plot")
 ``` r
 # Maximum skewness under linear transformation
 linear_transform(x, method = "skewness")$max_result
-#> [1] 0.00542609
+#> [1] 0.01160368
 ```
