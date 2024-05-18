@@ -6,7 +6,8 @@
 \alias{d4hCGF}
 \alias{l_dhCGF}
 \alias{dhCGF1D}
-\title{Calculation of derivatives of empirical cumulant generating function (CGF).}
+\title{Calculation of derivatives of empirical
+cumulant generating function (CGF).}
 \usage{
 d3hCGF(myt, x)
 
@@ -24,15 +25,17 @@ dhCGF1D(t, x)
 \item{p}{Dimension.}
 }
 \value{
-\code{d3hCGF} returns the sequence of third derivatives of empirical CGF,
-ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq p}.
+\code{d3hCGF} returns the sequence of third derivatives of
+empirical CGF, ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq p}.
 
-\code{d4hCGF} returns the sequence of fourth derivatives of empirical CGF
-ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq j_4 \leq p}.
+\code{d4hCGF} returns the sequence of fourth derivatives of empirical
+CGF ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq j_4 \leq p}.
 
-\code{l_dhCGF} returns number of distinct third and fourth derivatives.
+\code{l_dhCGF} returns number of distinct third and
+fourth derivatives.
 
-\code{dhCGF1D} returns third/fourth derivatives of univariate empirical CGF, which are \code{d3hCGF} and \code{d4hCGF} when \eqn{p = 1}.
+\code{dhCGF1D} returns third/fourth derivatives of univariate
+empirical CGF, which are \code{d3hCGF} and \code{d4hCGF} when \eqn{p = 1}.
 }
 \description{
 Get the third/fortth derivatives of sample CGF at a given point.
@@ -44,9 +47,11 @@ Estimator of standardized cumulant function is
 }
 and its \deqn{k^{th}} order derivatives is defined as
 \deqn{
-T_k(t) = \dfrac{\partial^k}{\partial t_{j_1}t_{j_2} \dots t_{j_k}} \log(\hat{M}_X(t)), t \in \mathbb{R}^p
+T_k(t) = \dfrac{\partial^k}{
+\partial t_{j_1}t_{j_2} \dots t_{j_k}} \log(\hat{M}_X(t)), t \in \mathbb{R}^p
  }
-where \eqn{t_{j_1}t_{j_2} \dots t_{j_k}} are the corresponding components of vector \eqn{t \in \mathbb{R}^p}.
+where \eqn{t_{j_1}t_{j_2} \dots t_{j_k}} are the corresponding components
+of vector \eqn{t \in \mathbb{R}^p}.
 }
 \examples{
 p <- 3
@@ -62,5 +67,4 @@ set.seed(1)
 x <- rnorm(100)
 t <- .3
 dhCGF1D(t, x)
-
 }

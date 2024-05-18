@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(MvNormTest)
+library(PlotNormTest)
 
-test_check("MvNormTest")
+test_check("PlotNormTest")

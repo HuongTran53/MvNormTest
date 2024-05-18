@@ -12,14 +12,17 @@ dhCGF_plot1D(x, alpha = 0.05, method)
 
 \item{alpha}{Significant level (default is \eqn{.05})}
 
-\item{method}{string, \code{"T3"} used the third derivatives, and \code{"T4"} uses the fourth derivatives.}
+\item{method}{string, \code{"T3"} used the third derivatives,
+and \code{"T4"} uses the fourth derivatives.}
 }
 \value{
 Plots
 }
 \description{
-Plots the empirical third/fourth derivatives of cumulant generating function together with confidence probability region.
-Indication of non-normality is either violation of probability bands or curves with high slope.
+Plots the empirical third/fourth derivatives of cumulant generating function
+together with confidence probability region.
+Indication of non-normality is either violation of probability bands or
+curves with high slope.
 }
 \examples{
 set.seed(123)
@@ -29,5 +32,5 @@ dhCGF_plot1D(x, method = "T4")
 
 }
 \references{
-\insertRef{ref:ghoshuni}{MvNormTest}
+\insertRef{ref:ghoshuni}{PlotNormTest}
 }

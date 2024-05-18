@@ -4,17 +4,14 @@
 \alias{Multivariate_CGF_PLot}
 \alias{d3hCGF_plot}
 \alias{d4hCGF_plot}
-\title{Graphical plots to assess multivariate normality assumption of data.}
+\title{Graphical plots to assess multivariate normality assumption.}
 \usage{
-d3hCGF_plot(x, l = NULL, alpha = 0.05)
+d3hCGF_plot(x, alpha = 0.05)
 
-d4hCGF_plot(x, l = NULL, alpha = 0.05)
+d4hCGF_plot(x, alpha = 0.05)
 }
 \arguments{
 \item{x}{Data matrix of size \eqn{n \times p}}
-
-\item{l}{Vector of linear combination, having length is the number of unique third/fourth
-derivatives. Default is \code{NULL} where the algorithm will use the average of distinct derivatives.}
 
 \item{alpha}{Significant level (default is \eqn{.05})}
 }
@@ -24,12 +21,14 @@ derivatives. Default is \code{NULL} where the algorithm will use the average of 
 \code{d4hCGF_plot} returns plot relying in forth derivatives.
 }
 \description{
-Cumulant generating functions of normally distributed random variables has derivatives
-of order higher than 3 are all 0. Hence, plots of empirical third/fourth order
-derivatives with large value or high slope gives indication of non-normality.
-\code{Multivariate_CGF_PLot} estimates and provides confidence region for average (or any linear combination)
-of third/fourth derivatives of empirical cumulant function at the points \eqn{t = t^*1_p}.
-Plots for \eqn{p = 2, 3, \dots, 10} will be faster to obtain, as confidence regions and other necessary parameters are available in
+Cumulant generating functions of normally distributed random variables
+has derivatives of order higher than 3 are all 0. Hence, plots of empirical
+third/fourth order derivatives with large value or high slope gives
+indication of non-normality. \code{Multivariate_CGF_PLot} estimates and
+provides confidence region for average (or any linear combination)
+of third/fourth derivatives of empirical cumulant function at the points
+\eqn{t = t^*1_p}. Plots for \eqn{p = 2, 3, \dots, 10} will be faster to
+obtain, as confidence regions and other necessary parameters are available in
 \code{mt3_lst_param.rda} and \code{mt4_lst_param.rda}.
 Higher dimension requires expensive computational cost.
 }

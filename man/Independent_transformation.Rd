@@ -11,15 +11,18 @@ Multi.to.Uni(x)
 \item{x}{multivariate data matrix}
 }
 \value{
-Data frame containning univariate data and the index from multivariate data.
+Data frame containing univariate data and
+the index from multivariate data.
 }
 \description{
-Leave-one-out method gives approximately independent sample of standard multivariate normal distribution,
+Leave-one-out method gives approximately independent sample of
+standard multivariate normal distribution,
 which then produces sample of standard univariate normal distribution.
 }
 \details{
 \deqn{S_{-k}^{-1/2} (X_k - \bar{X}_{-k}) , k = 1,... n}
-are approximately independent sample of \eqn{N_p(0, I)}, which then gives \eqn{n \times p}
+are approximately independent sample of \eqn{N_p(0, I)},
+which then gives \eqn{n \times p}
 univariate sample of \eqn{N(0, 1)}.
 }
 \examples{
@@ -27,5 +30,4 @@ set.seed(1)
 x <- MASS::mvrnorm(100, mu = rep(0, 5), diag(5))
 df <- Multi.to.Uni(x)
 qqnorm(df$x.new); abline(0, 1)
-
 }

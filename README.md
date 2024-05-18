@@ -1,22 +1,22 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# MvNormTest
+# PlotNormTest
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-MvNormTest provides graphical techniques to find evidence of
+PlotNormTest provides graphical techniques to find evidence of
 non-normality of a multivariate dataset.
 
 ## Installation
 
-You can install the development version of MvNormTest from
+You can install the development version of PlotNormTest from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("HuongTran53/MvNormTest")
+devtools::install_github("HuongTran53/PlotNormTest")
 ```
 
 ## Example
@@ -24,7 +24,7 @@ devtools::install_github("HuongTran53/MvNormTest")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(MvNormTest)
+library(PlotNormTest)
 set.seed(123)
 x <- MASS::mvrnorm(1000, rep(0, 5), diag(5))
 ```

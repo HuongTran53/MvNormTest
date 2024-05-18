@@ -22,22 +22,28 @@ mt4_pos(p)
 \item{p}{Dimension}
 }
 \value{
-\code{mt3_rev_pos} returns the position of this particular derivative in the chain of all derivatives, up to third order.
+\code{mt3_rev_pos} returns the position of this particular derivative
+in the chain of all derivatives, up to third order.
 
-\code{mt3_pos} an array contaning all position with respect to index of \eqn{j_1, j_2, j_3}.
+\code{mt3_pos} an array contaning all position with respect
+to index of \eqn{j_1, j_2, j_3}.
 
-\code{mt4_pos} an array contaning all position with respect to index of \eqn{j_1, j_2, j_3, j_4}.
+\code{mt4_pos} an array contaning all position with respect to
+the index of \eqn{j_1, j_2, j_3, j_4}.
 }
 \description{
-Given dimension \eqn{p}, returns a dataframe containing the position of all derivatives of
-estimator of moment generating function \eqn{\hat{M}_X(t)}, upto third/fourth order.
+Given dimension \eqn{p}, returns a dataframe containing the position of
+all derivatives of
+estimator of moment generating function \eqn{\hat{M}_X(t)},
+upto third/fourth order.
 }
 \details{
 The estimator of multivariate moment generating function is
 \eqn{\hat{M}_X(t) = \dfrac{1}{n} \sum_{i = 1}^n \exp(t'X_i)}
 The chain containing all derivatives up to the third order is
 \deqn{
-Z = \bigg(\hat{M}, \hat{M}^{001}, \dots \hat{M}^{00p}, \hat{M}^{011}, \hat{M}^{012}, \dots \hat{M}^{0pp}, \hat{M}^{111},
+Z = \bigg(\hat{M}, \hat{M}^{001}, \dots \hat{M}^{00p},
+\hat{M}^{011}, \hat{M}^{012}, \dots \hat{M}^{0pp}, \hat{M}^{111},
 \hat{M}^{112}, \dots \hat{M}^{ppp}\bigg)'
 }
 and
@@ -45,9 +51,10 @@ and
 \hat{M} = \hat{M}^{000}(t)= \hat{M}_X(t)
 }
 \deqn{
-\hat{M}^{j_1j_2j_3}(t) = \dfrac{\partial^k}{\partial t_{j_1} t_{j_2} t_{j_3}} \hat{M}(t)
-} where \eqn{k} is the number of \eqn{j_1, j_2, j_3} different from 0.
-
+\hat{M}^{j_1j_2j_3}(t) =
+\dfrac{\partial^k}{\partial t_{j_1} t_{j_2} t_{j_3}} \hat{M}(t)
+}
+where \eqn{k} is the number of \eqn{j_1, j_2, j_3} different from 0.
 Similar notation is applied when fourth derivatives is used.
 }
 \examples{
@@ -55,5 +62,4 @@ mt3_rev_pos(1, 2, 2, p = 3)
 p <- 3
 mt3_pos(p)
 mt4_pos(p)
-
 }

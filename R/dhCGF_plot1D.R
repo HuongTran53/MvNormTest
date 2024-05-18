@@ -1,18 +1,19 @@
+## -- Filename: dhCGF_plot1D.R
 #' @title Graphical plots to assess multivariate univarite assumption of data.
 #' @description
-#' Plots the empirical third/fourth derivatives of cumulant generating function together with confidence probability region.
-#' Indication of non-normality is either violation of probability bands or curves with high slope.
-#'
+#' Plots the empirical third/fourth derivatives of cumulant generating function
+#' together with confidence probability region.
+#' Indication of non-normality is either violation of probability bands or
+#'  curves with high slope.
 #' @name Univariate_CGF_plot
 #' @param x Univariate data
 #' @param alpha Significant level (default is \eqn{.05})
-#' @param method string, \code{"T3"} used the third derivatives, and \code{"T4"} uses the fourth derivatives.
-#'
-#'
+#' @param method string, \code{"T3"} used the third derivatives,
+#' and \code{"T4"} uses the fourth derivatives.
 #' @return Plots
 #' @export
 #' @references
-#' \insertRef{ref:ghoshuni}{MvNormTest}
+#' \insertRef{ref:ghoshuni}{PlotNormTest}
 #' @examples
 #' set.seed(123)
 #' x <- rnorm(100)
@@ -28,14 +29,26 @@ dhCGF_plot1D <- function(x, alpha = 0.05, method){
   # load("data/mt3_lst_param.RData")
   # load("data/mt4_lst_param.RData")
 
-  sT3 <- mt3_lst_param$'1'$varLtLs
+  sT3 <- c(
+    92.42158217,	74.73877805,	60.7302487,	49.59500711,	40.7146832,
+    33.61041073,	27.91023887,	23.3244267,	19.62665994,	16.63973104,
+    14.22459407,	12.2719798,	10.69596014,	9.429002869,	8.418171,
+    7.622206539,	7.00930269,	6.555417571,	6.243020088,	6.060187813,
+    6
+  )
+  sT3 <- c(sT3, rev(sT3[-21]))
   # sT3 <- diag(mt3_lst_param$'1'$l.sTtTs)
-  m.supLt3 <- mt3_lst_param$'1'$m.supLt
+  m.supLt3 <- 1.453986705
 
-  sT4 <- mt4_lst_param$'1'$varLtLs
-  # sT4 <- diag(mt4_lst_param$'1'$l.sTtTs)
-  m.supLt4 <- mt4_lst_param$'1'$m.supLt
+  sT4 <- c(568.1209021,	448.0515896,	355.0182299,	282.6795124,	226.2374173,
+           182.0500981,	147.3446669,	120.0034577,	98.40450305,	81.30213209,
+           67.73735645,	56.97044429,	48.4300794,	41.67496479,	36.3648053,
+           32.23839726,	29.09714181,	26.79273777,	25.2181407,	24.30112719,
+           24)
 
+  sT4 <- c(sT4, rev(sT4[-21]))
+
+  m.supLt4 <- 1.478985651
 
   nx <- length(x)
   re <- lapply(bigt, dhCGF1D, x = x)

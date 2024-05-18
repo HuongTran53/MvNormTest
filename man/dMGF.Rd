@@ -7,27 +7,35 @@
 dMGF(tab, t, coef = TRUE)
 }
 \arguments{
-\item{tab}{dataframe whose whose columns are the components and the order of derivatives.}
+\item{tab}{dataframe whose whose columns are the components and
+the order of derivatives.}
 
 \item{t}{vector in \eqn{\mathbb{R}^p}.}
 
-\item{coef}{get only polynomial or whole expression by multiplying the polynomial term with the exponent term \eqn{\exp(.5 t't)}.}
+\item{coef}{get only polynomial or whole expression by multiplying the
+polynomial term with the exponent term \eqn{\exp(.5 t't)}.}
 }
 \value{
 Value of derivatives.
 }
 \description{
-Get the polynomial term in the expression of derivatives of  moment generating function of \eqn{N_p(0, I_p)}, with
+Get the polynomial term in the expression of derivatives of  moment
+generating function of \eqn{N_p(0, I_p)}, with
 respect to a given component and its exponent. Up to eighth order.
 }
 \details{
 For a standard multivariate normal random variables \eqn{Y \sim N_p(0, I_p)}
-\deqn{\mathbb{E}\left(Y_1^{k_1} ... Y_p^{k_p} \exp(t'X)\right) = \dfrac{\partial^{k_1}\dots
- \partial^{k_p}}{t_1^{k_1} \dots t_p^{k_p}} \exp(t't/2) =
- \mu^{(k_1)} (t_1) ... \mu^{(k_p)}(t_p) \exp(t't/2)}
+\deqn{
+\mathbb{E}\left(Y_1^{k_1} ... Y_p^{k_p} \exp(t'X)\right) =
+\dfrac{\partial^{k_1}\dots
+\partial^{k_p}}{t_1^{k_1} \dots t_p^{k_p}} \exp(t't/2) =
+\mu^{(k_1)} (t_1) ... \mu^{(k_p)}(t_p) \exp(t't/2)
+}
 For example,
-\eqn{\mathbb{E}Y_2^4 \exp(t'Y) = \dfrac{\partial^4}{\partial t_2^4} \exp(t't/2)
-= \mu^{(4)}(t_2) \exp(t't/2).}
+\eqn{
+\mathbb{E}Y_2^4 \exp(t'Y) = \dfrac{\partial^4}{\partial t_2^4} \exp(t't/2)
+= \mu^{(4)}(t_2) \exp(t't/2).
+}
 }
 \examples{
 #Calculation of above example

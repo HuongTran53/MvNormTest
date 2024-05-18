@@ -4,7 +4,8 @@
 \alias{covTtTs}
 \alias{mt3_covTtTs}
 \alias{mt4_covTtTs}
-\title{Covariance matrix of derivatives of sample cumulant generating function (CGF).}
+\title{Covariance matrix of derivatives of sample cumulant
+generating function (CGF).}
 \usage{
 mt3_covTtTs(bigt, p = 1, pos.matrix = NULL)
 
@@ -15,23 +16,24 @@ mt4_covTtTs(bigt, p = 1, pos.matrix = NULL)
 
 \item{p}{dimension.}
 
-\item{pos.matrix}{matrix containing information of position of any derivatives. Default is \code{NULL},
-the function will call \code{\link[=mt3_pos]{mt3_pos()}} or \code{\link[=mt4_pos]{mt4_pos()}}.}
+\item{pos.matrix}{matrix containing information of position of any
+derivatives. Default is \code{NULL}, the function will call
+\code{\link[=mt3_pos]{mt3_pos()}} or \code{\link[=mt4_pos]{mt4_pos()}}.}
 }
 \value{
-A 2 dimensional upper square triangular array, with size equals to length of \code{bigt},
-each position contains a covariance matrix of derivatives sequences between any two points \eqn{t = t^* 1_p} and
-\eqn{s = s^*1_p}.
-Diagonal of this array is the variance/covariance matrix of derivatives sequences, taking at points
-\eqn{t = t^*1_p}.
-
+A 2 dimensional upper square triangular array, with size equals to
+length of \code{bigt}, each element contains a covariance matrix of
+derivatives sequences between any two points \eqn{t = t^* 1_p} and
+\eqn{s = s^*1_p}. Diagonal of this array is the variance/covariance matrix of
+derivatives sequences, taking at points \eqn{t = t^*1_p}.
 \code{mt3_covTsTt} returns result relating the use of third derivatives.
 
 \code{mt4_covTsTt} returns result relating the use of fourth derivatives.
 }
 \description{
-Stacking third/fourth derivatives of sample CGF together to obtain a vector,
-which (under normality assumption) approaches a normally distributed vector with zero mean and a covariance matrix.
+Stacking third/fourth derivatives of sample CGF together
+to obtain a vector, which (under normality assumption) approaches a normally
+distributed vector with zero mean and a covariance matrix.
 More specifically, \code{covTsTs} computes covariance between any two
 points as the form \eqn{t = t^*1_p} and \eqn{s = s^*1_p}.
 }
@@ -44,7 +46,6 @@ p\\2
 p \\ 3
 \end{pmatrix}
 }
-
 Number of distinct fourth derivatives is
 \deqn{
 l_{T_4} = p + 3 \times \begin{pmatrix}
@@ -55,7 +56,8 @@ p \\ 3
 p \\ 4
 \end{pmatrix}
 }
-For each pairs of \eqn{(t^*, s^*)}, \code{covTsTt} results a covariance matrix of size \eqn{l_{T_3} \times l_{T_3}} or \eqn{l_{T_4} \times l_{T_4}}.
+For each pairs of \eqn{(t^*, s^*)}, \code{covTsTt} results a covariance
+matrix of size \eqn{l_{T_3} \times l_{T_3}} or \eqn{l_{T_4} \times l_{T_4}}.
 }
 \examples{
 bigt <- seq(-1, 1, .4)

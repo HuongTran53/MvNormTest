@@ -1,20 +1,21 @@
 # --- Filename: d_hCGF.R ---#
-#' @title Calculation of derivatives of empirical cumulant generating function (CGF).
+#' @title Calculation of derivatives of empirical
+#' cumulant generating function (CGF).
 #' @name  dCGF
 #' @description
 #' Get the third/fortth derivatives of sample CGF at a given point.
-#'
 #' @details
-#'
 #' Estimator of standardized cumulant function is
 #' \deqn{ \log\hat{M}_X(t) = \log \left(\dfrac{1}{n}
 #' \sum_{i = 1}^n \exp(t'S^{\frac{-1}{2}}(X_i - \bar{X})) \right)
 #' }
 #' and its \deqn{k^{th}} order derivatives is defined as
 #' \deqn{
-#' T_k(t) = \dfrac{\partial^k}{\partial t_{j_1}t_{j_2} \dots t_{j_k}} \log(\hat{M}_X(t)), t \in \mathbb{R}^p
+#' T_k(t) = \dfrac{\partial^k}{
+#' \partial t_{j_1}t_{j_2} \dots t_{j_k}} \log(\hat{M}_X(t)), t \in \mathbb{R}^p
 #'  }
-#' where \eqn{t_{j_1}t_{j_2} \dots t_{j_k}} are the corresponding components of vector \eqn{t \in \mathbb{R}^p}.
+#' where \eqn{t_{j_1}t_{j_2} \dots t_{j_k}} are the corresponding components
+#' of vector \eqn{t \in \mathbb{R}^p}.
 # The number of distinct third derivatives is:
 # \deqn{
 # l_T = p + 2 \times \begin{pmatrix}
@@ -23,12 +24,10 @@
 # p \\ 3
 # \end{pmatrix}
 # }
-#'
 #' @param myt,t numeric vector of length \code{p}.
 #' @param x data matrix.
-#'
-#' @return \code{d3hCGF} returns the sequence of third derivatives of empirical CGF,
-#' ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq p}.
+#' @return \code{d3hCGF} returns the sequence of third derivatives of
+#' empirical CGF, ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq p}.
 #' @export
 #' @examples
 #' p <- 3
@@ -39,34 +38,28 @@
 #' myt <- rep(.2, p)
 #' d3hCGF(myt = myt, x = x)
 #' d4hCGF(myt = myt, x = x)
-
 d3hCGF <- function(myt, x){
   nx <- nrow(x)
   p <- ncol(x)
   #standardize data: not using Cholesky decomposition
   S <- stats::cov(x)
-
   xbar <- colMeans(x)
   m <- matrix(rep(xbar, nx), byrow = T, ncol = p)
   x <- x - m
-
   chol.S <- chol(S)  # 50% faster
   A <-  backsolve(r = chol.S, x = diag(p))
   x <- x %*% A    # check var(x) is an identity matrix
   #############################################
-
   pi <- c(exp(x %*% myt))
   pbar <- 1/sum(exp(x %*% myt))
   pi <- pbar*pi
   m1  <- colSums(x*pi)
   m2  <-  t(x*pi)%*%x
-
   t3 <-  lapply( 1:p, function(k){
     temp2 <- m1 %*% t(m2[k, ]);
     t(x*pi*x[,k])%*%x -  m1[k] *m2 -temp2 - t(temp2) +2* (m1[k]) * (m1) %*% t(m1)
     # t(x*pi*x[,k])%*%x -  m1[k] *m2 -temp2 - t(temp2) +  (m1[k]) * (m1) %*% t(m1)
   })
-
   v3 <- c()
   for (i in 1:p){
     t3i <- t3[[i]][i:p, i:p]
@@ -75,14 +68,11 @@ d3hCGF <- function(myt, x){
   }
   return(v3)
 }
-
 #####################################################
 #####################################################
 #' @rdname dCGF
-#'
-#'
-#' @return \code{d4hCGF} returns the sequence of fourth derivatives of empirical CGF
-#' ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq j_4 \leq p}.
+#' @return \code{d4hCGF} returns the sequence of fourth derivatives of empirical
+#'  CGF ordered by index of \eqn{j_1 \leq j_2 \leq j_3 \leq j_4 \leq p}.
 #' @export
 d4hCGF <- function(myt, x){
   nx <- nrow(x)
@@ -99,7 +89,6 @@ d4hCGF <- function(myt, x){
     A <-  backsolve(r = chol.S, x = diag(p))
     x <- x %*% A    # check var(x) is an identity matrix
   }
-
   #############################################
   pi <- c(exp(x %*% myt))
   pbar <- 1/sum(exp(x %*% myt))
@@ -155,18 +144,19 @@ d4hCGF <- function(myt, x){
 ###################################
 #' @rdname dCGF
 #' @param p Dimension.
-#' @return \code{l_dhCGF} returns number of distinct third and fourth derivatives.
+#' @return \code{l_dhCGF} returns number of distinct third and
+#' fourth derivatives.
 #' @export
 l_dhCGF <- function(p){
    l3 <- p + choose(p, 2)*2 + choose(p, 3)
    l4 <- p + 3 *choose(p, 2) + 3*choose(p, 3) + choose(p, 4)
    return(list("Third derivatives" = l3, "fourth derivatives" = l4))
 }
-
 ############################
 ############################
 #' @rdname dCGF
-#' @return \code{dhCGF1D} returns third/fourth derivatives of univariate empirical CGF, which are \code{d3hCGF} and \code{d4hCGF} when \eqn{p = 1}.
+#' @return \code{dhCGF1D} returns third/fourth derivatives of univariate
+#' empirical CGF, which are \code{d3hCGF} and \code{d4hCGF} when \eqn{p = 1}.
 #' @export
 #' @examples
 #' #Univariate data
@@ -174,7 +164,6 @@ l_dhCGF <- function(p){
 #' x <- rnorm(100)
 #' t <- .3
 #' dhCGF1D(t, x)
-#'
 dhCGF1D <- function(t, x){
   z <- (x - mean(x))/stats::sd(x)
   nz <- length(z)

@@ -4,34 +4,42 @@
 \alias{covLtLs}
 \alias{mt3_covLtLs}
 \alias{mt4_covLtLs}
-\title{Linear combinations of distinct derivatives of empirical cumulant generating function (CGF).}
+\title{Linear combinations of distinct derivatives of empirical
+cumulant generating function (CGF).}
 \usage{
 mt3_covLtLs(l, p, bigt = seq(-1, 1, 0.05)/sqrt(p), sTtTs = NULL, seed = 1)
 
 mt4_covLtLs(l, p, bigt = seq(-1, 1, 0.05)/sqrt(p), sTtTs = NULL, seed = 1)
 }
 \arguments{
-\item{l}{vector of linear combination with length is the number of distinct derivatives, see \code{\link[=l_dhCGF]{l_dhCGF()}}.}
+\item{l}{vector of linear combination with length is the number of distinct
+derivatives, see \code{\link[=l_dhCGF]{l_dhCGF()}}.}
 
 \item{p}{dimension.}
 
 \item{bigt}{array of value \eqn{t^*} and \eqn{s^*}.}
 
-\item{sTtTs}{Covariance matrix of derivatives vector, see \code{\link[=covTtTs]{covTtTs()}}. Default is \code{NULL}, when the algorithm
-will call \code{\link[=mt3_covTtTs]{mt3_covTtTs()}} or \code{\link[=mt4_covTtTs]{mt4_covTtTs()}}.}
+\item{sTtTs}{Covariance matrix of derivatives vector,
+see \code{\link[=covTtTs]{covTtTs()}}. Default is \code{NULL},
+when the algorithm
+will call \code{\link[=mt3_covTtTs]{mt3_covTtTs()}} or
+\code{\link[=mt4_covTtTs]{mt4_covTtTs()}}.}
 
-\item{seed}{Random seed to get the estimated of the supremum of the univariate Gaussian process obtained from the linear combination.}
+\item{seed}{Random seed to get the estimated of the supremum of the
+univariate Gaussian process obtained from the linear combination.}
 }
 \value{
 \itemize{
-\item{\code{sLtLs} covariance matrix of the linear combination of distinct derivatives, which is a zero-mean Gaussian process. }
-\item{\code{m.supLt} Monte-Carlo estimates of supremum of this Gaussian process}
+\item{\code{sLtLs} covariance matrix of the linear combination of distinct
+derivatives, which is a zero-mean Gaussian process. }
+\item{\code{m.supLt} Monte-Carlo estimates of supremum of this
+Gaussian process}
 }
 \code{mt3_covLtLs} returns values related to the use of third derivatives.
 \code{mt4_covLtLs} returns values related to the use of fourth derivatives.
 }
 \description{
-Linear combination of third/fourth derivatives of CGF results in an asymptotically
+Linear combination of third/fourth derivatives of CGF gives an asymptotically
 univariate Gaussian process with mean 0 and covariance between two points
 \eqn{t \in \mathbb{R}^p} and \eqn{s \in \mathbb{R}^p} is defined.
 We are considering vector \eqn{t} and \eqn{s} as the form  \eqn{t = t^*1_p}

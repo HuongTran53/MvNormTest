@@ -14,13 +14,17 @@ mt4_matrix_A(t)
 \item{t}{vector of \eqn{\mathbb{R}^p}}
 }
 \value{
-\code{mt3_matrix_A} returns coefficient matrix relating to the use of third derivatives.
+\code{mt3_matrix_A} returns coefficient matrix relating to the use
+of third derivatives.
 
-\code{mt4_matrix_A} returns coefficient matrix relating to the use of fourth derivatives.
+\code{mt4_matrix_A} returns coefficient matrix relating to the
+use of fourth derivatives.
 }
 \description{
-Taylor expansion implies that vectors of derivatives of \eqn{\log(\hat{M}_X(t))} can be approximated
-by a linear combination of vectors of derivatives of \eqn{\hat{M}_X(t)}. \code{matrix_A} results the corresponding
+Taylor expansion implies that vectors of derivatives of
+\eqn{\log(\hat{M}_X(t))} can be approximated
+by a linear combination of vectors of derivatives of \eqn{\hat{M}_X(t)}.
+\code{matrix_A} results the corresponding
 linear combinations.
 }
 \examples{
