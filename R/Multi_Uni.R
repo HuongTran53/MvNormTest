@@ -1,17 +1,19 @@
 # -- Filename: Multi_Uni.R -----#
-#' @title Transformation to Independent Univariate Sample.
+#' @title Transformation to Independent Univariate Sample
 #' @name Independent_transformation
 #' @description Leave-one-out method gives approximately independent sample of
 #' standard multivariate normal distribution,
 #' which then produces sample of standard univariate normal distribution.
 #' @param x multivariate data matrix
-#' @return Data frame containing univariate data and
+#' @return Data frame contains univariate data and
 #' the index from multivariate data.
 #' @details
-#' \deqn{S_{-k}^{-1/2} (X_k - \bar{X}_{-k}) , k = 1,... n}
-#' are approximately independent sample of \eqn{N_p(0, I)},
-#' which then gives \eqn{n \times p}
-#' univariate sample of \eqn{N(0, 1)}.
+#' Let \eqn{\bar{X}_{-k} } and \eqn{S_{-k}} are the sample mean sample variance
+#' covariance matrix obtained by using all but \eqn{k^{th}} data point. Then
+#' \eqn{S_{-k}^{-1/2} (X_k - \bar{X}_{-k}) , k = 1,... n} are approximately
+#' independently distributed as \eqn{N_p(0, I)}. Thus all \eqn{n \times p}
+#' entries in the data matrix so constructed can be treated as
+#' univariate samples of size \eqn{n \time p} from \eqn{N(0, 1)}.
 # @note The transformation gives number of data points as a multiple of
 # dimension \eqn{p}, density of data points is high and
 # spline method may produce ill-posed matrices. Merging with \code{x.dist}

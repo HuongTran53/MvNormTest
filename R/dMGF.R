@@ -6,10 +6,12 @@
 #' generating function of \eqn{N_p(0, I_p)}, with
 #' respect to a given component and its exponent. Up to eighth order.
 #'
-#' @param tab dataframe whose whose columns are the components and
-#' the order of derivatives.
+#' @param tab a dataframe with the first column contain indices of components of
+#' a multivariate random vector \eqn{\bold{X}}, and the second column is the order
+#' derivatives with respect to that components.
 #' @param t vector in \eqn{\mathbb{R}^p}.
-#' @param coef get only polynomial or whole expression by multiplying the
+#' @param coef take \code{TRUE} or \code{FALSE} value to
+#' obtain only polynomial or whole expression by multiplying the
 #' polynomial term with the exponent term \eqn{\exp(.5 t't)}.
 #' @return Value of derivatives.
 #' @details

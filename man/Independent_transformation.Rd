@@ -3,7 +3,7 @@
 \name{Independent_transformation}
 \alias{Independent_transformation}
 \alias{Multi.to.Uni}
-\title{Transformation to Independent Univariate Sample.}
+\title{Transformation to Independent Univariate Sample}
 \usage{
 Multi.to.Uni(x)
 }
@@ -11,7 +11,7 @@ Multi.to.Uni(x)
 \item{x}{multivariate data matrix}
 }
 \value{
-Data frame containing univariate data and
+Data frame contains univariate data and
 the index from multivariate data.
 }
 \description{
@@ -20,10 +20,12 @@ standard multivariate normal distribution,
 which then produces sample of standard univariate normal distribution.
 }
 \details{
-\deqn{S_{-k}^{-1/2} (X_k - \bar{X}_{-k}) , k = 1,... n}
-are approximately independent sample of \eqn{N_p(0, I)},
-which then gives \eqn{n \times p}
-univariate sample of \eqn{N(0, 1)}.
+Let \eqn{\bar{X}_{-k} } and \eqn{S_{-k}} are the sample mean sample variance
+covariance matrix obtained by using all but \eqn{k^{th}} data point. Then
+\eqn{S_{-k}^{-1/2} (X_k - \bar{X}_{-k}) , k = 1,... n} are approximately
+independently distributed as \eqn{N_p(0, I)}. Thus all \eqn{n \times p}
+entries in the data matrix so constructed can be treated as
+univariate samples of size \eqn{n \time p} from \eqn{N(0, 1)}.
 }
 \examples{
 set.seed(1)

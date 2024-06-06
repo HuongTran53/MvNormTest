@@ -49,10 +49,10 @@ skewness <- function(x) {
 #' @title Best Linear Transformations
 #' @name linear_transform
 #' @description
-#' The algorithm uses gradient descent algorithm to obtain the maximum square of
-#' sample skewness, kurtosis or their average under any univariate
-#' linear transformation.
-#' Departure from 0 of these values is an indication of non-normality.
+#' The algorithm uses gradient descent algorithm to obtain the maximum of the
+#' square of sample skewness, of the kurtosis or of their average under any
+#' univariate linear transformation of the multivariate data.
+# Departure from 0 of these values is an indication of non-normality.
 #'
 #' @param x multivariate data matrix.
 #' @param l0 starting point for projection algorithm,

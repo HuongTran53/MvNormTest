@@ -14,32 +14,31 @@ mt4_covTtTs(bigt, p = 1, pos.matrix = NULL)
 \arguments{
 \item{bigt}{array contains value of \eqn{t^*}.}
 
-\item{p}{dimension.}
+\item{p}{dimension of multivariate random vector which data are collected.}
 
 \item{pos.matrix}{matrix containing information of position of any
 derivatives. Default is \code{NULL}, the function will call
 \code{\link[=mt3_pos]{mt3_pos()}} or \code{\link[=mt4_pos]{mt4_pos()}}.}
 }
 \value{
-A 2 dimensional upper square triangular array, with size equals to
-length of \code{bigt}, each element contains a covariance matrix of
+A 2 dimensional upper triangular array, with size equals to
+length of \code{bigt}. Each element contains a covariance matrix of
 derivatives sequences between any two points \eqn{t = t^* 1_p} and
-\eqn{s = s^*1_p}. Diagonal of this array is the variance/covariance matrix of
-derivatives sequences, taking at points \eqn{t = t^*1_p}.
-\code{mt3_covTsTt} returns result relating the use of third derivatives.
+\eqn{s = s^*1_p}.
+\code{mt3_covTsTt} returns the resulting third derivatives.
 
-\code{mt4_covTsTt} returns result relating the use of fourth derivatives.
+\code{mt4_covTsTt} returns the resulting forth derivatives.
 }
 \description{
 Stacking third/fourth derivatives of sample CGF together
-to obtain a vector, which (under normality assumption) approaches a normally
+to obtain a vector, which (under normality assumption on data) approaches a normally
 distributed vector with zero mean and a covariance matrix.
 More specifically, \code{covTsTs} computes covariance between any two
 points as the form \eqn{t = t^*1_p} and \eqn{s = s^*1_p}.
 }
 \details{
 Number of distinct third derivatives is
-\deqn{
+\eqn{
 l_{T_3}= p + 2 \times \begin{pmatrix}
 p\\2
 \end{pmatrix} + \begin{pmatrix}
@@ -47,7 +46,7 @@ p \\ 3
 \end{pmatrix}
 }
 Number of distinct fourth derivatives is
-\deqn{
+\eqn{
 l_{T_4} = p + 3 \times \begin{pmatrix}
 p\\2
 \end{pmatrix} + 3 \times \begin{pmatrix}

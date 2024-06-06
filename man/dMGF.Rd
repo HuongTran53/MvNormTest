@@ -7,12 +7,14 @@
 dMGF(tab, t, coef = TRUE)
 }
 \arguments{
-\item{tab}{dataframe whose whose columns are the components and
-the order of derivatives.}
+\item{tab}{a dataframe with the first column contain indices of components of
+a multivariate random vector \eqn{\bold{X}}, and the second column is the order
+derivatives with respect to that components.}
 
 \item{t}{vector in \eqn{\mathbb{R}^p}.}
 
-\item{coef}{get only polynomial or whole expression by multiplying the
+\item{coef}{take \code{TRUE} or \code{FALSE} value to
+obtain only polynomial or whole expression by multiplying the
 polynomial term with the exponent term \eqn{\exp(.5 t't)}.}
 }
 \value{

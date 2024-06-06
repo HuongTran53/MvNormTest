@@ -39,10 +39,9 @@ default is \code{5000}.}
 }
 }
 \description{
-The algorithm uses gradient descent algorithm to obtain the maximum square of
-sample skewness, kurtosis or their average under any univariate
-linear transformation.
-Departure from 0 of these values is an indication of non-normality.
+The algorithm uses gradient descent algorithm to obtain the maximum of the
+square of sample skewness, of the kurtosis or of their average under any
+univariate linear transformation of the multivariate data.
 }
 \examples{
 set.seed(1)

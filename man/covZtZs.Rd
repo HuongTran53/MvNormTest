@@ -14,7 +14,7 @@ mt4_covZtZs(t, s, pos.matrix = NULL)
 \arguments{
 \item{t, s}{a vector of length \eqn{p}.}
 
-\item{pos.matrix}{matrix contains information of position of any derivatives.
+\item{pos.matrix}{matrix contains information of positions of derivatives.
 Default is \code{NULL}, where the function will call
 \code{\link[=mt3_pos]{mt3_pos()}} or \code{\link[=mt4_pos]{mt4_pos()}}.}
 }
@@ -23,13 +23,13 @@ Default is \code{NULL}, where the function will call
 of third derivatives.
 
 \code{mt4_covZtZs} Covariance matrix relating to the use of
-fourth derivatives, which also contains information of the use of
+fourth derivatives. This also contains information on the third
 third derivatives \code{mt3_covZtZs}.
 }
 \description{
-Stacking derivatives upto third/fourth order of sample MGF
+Stacking derivatives upto the third/fourth orders of sample MGF
 together to obtain a vector, which (under normality assumption) approaches
-a normally distributed vector
+a multivariate normally distributed vector
 with zero mean and a covariance matrix.
 \code{covZtZs} calculates covariance between any two points
 \eqn{t} and \eqn{s} in \eqn{\mathbb{R}^p}.

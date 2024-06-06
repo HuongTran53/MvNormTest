@@ -102,7 +102,7 @@ score_plot1D <- function(x, P = NULL,
       axis.title=element_text(size=14,face="bold"),
       legend.background = element_rect(
         size=0.5, linetype="solid"),
-      legend.text = element_text(size=12)) + ylab("Estimated Score") +
+      legend.text = element_text(size=12)) + ylab("Score function") +
     ggplot2::theme(legend.position="top")
   return(list(plot= g, outlier = unique(out)))
 }

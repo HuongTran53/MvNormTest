@@ -12,10 +12,10 @@ mt3_covLtLs(l, p, bigt = seq(-1, 1, 0.05)/sqrt(p), sTtTs = NULL, seed = 1)
 mt4_covLtLs(l, p, bigt = seq(-1, 1, 0.05)/sqrt(p), sTtTs = NULL, seed = 1)
 }
 \arguments{
-\item{l}{vector of linear combination with length is the number of distinct
+\item{l}{vector of linear combination of size equal to the number of distinct
 derivatives, see \code{\link[=l_dhCGF]{l_dhCGF()}}.}
 
-\item{p}{dimension.}
+\item{p}{dimension of multivariate random vector which data are collected.}
 
 \item{bigt}{array of value \eqn{t^*} and \eqn{s^*}.}
 
@@ -25,7 +25,7 @@ when the algorithm
 will call \code{\link[=mt3_covTtTs]{mt3_covTtTs()}} or
 \code{\link[=mt4_covTtTs]{mt4_covTtTs()}}.}
 
-\item{seed}{Random seed to get the estimated of the supremum of the
+\item{seed}{Random seed to get the estimate of the supremum of the
 univariate Gaussian process obtained from the linear combination.}
 }
 \value{
@@ -42,7 +42,7 @@ Gaussian process}
 Linear combination of third/fourth derivatives of CGF gives an asymptotically
 univariate Gaussian process with mean 0 and covariance between two points
 \eqn{t \in \mathbb{R}^p} and \eqn{s \in \mathbb{R}^p} is defined.
-We are considering vector \eqn{t} and \eqn{s} as the form  \eqn{t = t^*1_p}
+We consider vector \eqn{t} and \eqn{s} as the form  \eqn{t = t^*1_p}
 and \eqn{s = s^*1_p}.
 }
 \examples{

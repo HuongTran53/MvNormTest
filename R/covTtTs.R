@@ -3,12 +3,12 @@
 #' @title Covariance matrix of derivatives of sample cumulant
 #' generating function (CGF).
 #' @description Stacking third/fourth derivatives of sample CGF together
-#' to obtain a vector, which (under normality assumption) approaches a normally
+#' to obtain a vector, which (under normality assumption on data) approaches a normally
 #' distributed vector with zero mean and a covariance matrix.
 #' More specifically, \code{covTsTs} computes covariance between any two
 #' points as the form \eqn{t = t^*1_p} and \eqn{s = s^*1_p}.
 #' @details Number of distinct third derivatives is
-#' \deqn{
+#' \eqn{
 #' l_{T_3}= p + 2 \times \begin{pmatrix}
 #' p\\2
 #' \end{pmatrix} + \begin{pmatrix}
@@ -16,7 +16,7 @@
 #' \end{pmatrix}
 #' }
 #' Number of distinct fourth derivatives is
-#' \deqn{
+#' \eqn{
 #' l_{T_4} = p + 3 \times \begin{pmatrix}
 #' p\\2
 #' \end{pmatrix} + 3 \times \begin{pmatrix}
@@ -28,16 +28,15 @@
 #' For each pairs of \eqn{(t^*, s^*)}, \code{covTsTt} results a covariance
 #' matrix of size \eqn{l_{T_3} \times l_{T_3}} or \eqn{l_{T_4} \times l_{T_4}}.
 #' @param bigt array contains value of \eqn{t^*}.
-#' @param p dimension.
+#' @param p dimension of multivariate random vector which data are collected.
 #' @param pos.matrix matrix containing information of position of any
 #' derivatives. Default is \code{NULL}, the function will call
 #'\code{\link[=mt3_pos]{mt3_pos()}} or \code{\link[=mt4_pos]{mt4_pos()}}.
-#' @return A 2 dimensional upper square triangular array, with size equals to
-#' length of \code{bigt}, each element contains a covariance matrix of
+#' @return A 2 dimensional upper triangular array, with size equals to
+#' length of \code{bigt}. Each element contains a covariance matrix of
 #' derivatives sequences between any two points \eqn{t = t^* 1_p} and
-#' \eqn{s = s^*1_p}. Diagonal of this array is the variance/covariance matrix of
-#' derivatives sequences, taking at points \eqn{t = t^*1_p}.
-#' \code{mt3_covTsTt} returns result relating the use of third derivatives.
+#' \eqn{s = s^*1_p}.
+#' \code{mt3_covTsTt} returns the resulting third derivatives.
 #' @export
 #' @examples
 #' bigt <- seq(-1, 1, .4)
@@ -76,7 +75,7 @@ mt3_covTtTs <- function(bigt, p = 1, pos.matrix= NULL){
 }
 #################################################
 #' @rdname covTtTs
-#' @return \code{mt4_covTsTt} returns result relating the use of fourth derivatives.
+#' @return \code{mt4_covTsTt} returns the resulting forth derivatives.
 #' @export
 mt4_covTtTs <- function(bigt, p = 1, pos.matrix= NULL){
   if (is.null(pos.matrix)){

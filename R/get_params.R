@@ -2,15 +2,11 @@
 #' @name get_params
 #' @title Get parameters for plots derivatives of multivariate CGF to assess
 #' normality assumption.
-#' @description Obtain neccesaary paramaters to build a graphical test using
-#' third/fourth derivatives
-#' of cumulant generating function. The set of availble parameters for test in
-#' dimensions \code{p = 1, 2,..., 10}, test points
-#' \eqn{t = t^*1_p} with value of \eqn{t^*} in
-#' \code{bigt = seq(-1, 1, by = 0.05)/sqrt(p)} and \code{l} chosen as the
-#' average of distinct derivatives is available.
-# \code{\link[=data/mt3_lst_param.RDATA]{mt3_lst_param.RDATA}} and
-# \code{\link[=data/mt4_lst_param.RDATA]{mt4_lst_param.RDATA}}.
+#' @description Obtain necessary parameters to build a graphical test using
+#' the third/fourth derivatives of cumulant generating function.
+#  Here, \eqn{1 \leq p \leq 10, t = t^*1_p } with the value of \eqn{t^*} in
+#  \code{bigt = seq(-1, 1, by = 0.05)/sqrt(p)} and \code{l} chosen as the
+#  average of distinct derivatives is available.
 #' @param p Dimension.
 #' @param l Linear transformation of vector of third/fourth distinct
 #' derivatives, default is their average.
