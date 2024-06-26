@@ -3,8 +3,8 @@
 #' @title Covariance matrix of derivatives of sample cumulant
 #' generating function (CGF).
 #' @description Stacking third/fourth derivatives of sample CGF together
-#' to obtain a vector, which (under normality assumption on data) approaches a normally
-#' distributed vector with zero mean and a covariance matrix.
+#' to obtain a vector, which (under normality assumption on data) approaches
+#' a normally distributed vector with zero mean and a covariance matrix.
 #' More specifically, \code{covTsTs} computes covariance between any two
 #' points as the form \eqn{t = t^*1_p} and \eqn{s = s^*1_p}.
 #' @details Number of distinct third derivatives is

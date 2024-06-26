@@ -7,9 +7,9 @@
 dMGF(tab, t, coef = TRUE)
 }
 \arguments{
-\item{tab}{a dataframe with the first column contain indices of components of
-a multivariate random vector \eqn{\bold{X}}, and the second column is the order
-derivatives with respect to that components.}
+\item{tab}{a dataframe with the first column contain indices of components
+of a multivariate random vector \eqn{\bold{X}}, and the second column is the
+order derivatives with respect to that components.}
 
 \item{t}{vector in \eqn{\mathbb{R}^p}.}
 
