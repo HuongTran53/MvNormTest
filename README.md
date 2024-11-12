@@ -4,6 +4,8 @@
 # PlotNormTest
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/HuongTran53/MvNormTest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/HuongTran53/MvNormTest/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 PlotNormTest provides graphical techniques to find evidence of

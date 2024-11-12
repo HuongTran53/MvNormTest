@@ -10,8 +10,7 @@ Authors@R: c(person("Huong", "Tran", email =  "quynhhuong5335@gmail.com", role =
 Author: Huong Tran [aut, cre], 
   Ravindra Khattree [aut]
 Maintainer: Huong Tran <quynhhuong5335@gmail.com>
-Description: Implementation of graphical methods to find evidences of nonnormality of a univariate/multivariate dataset, including the assessments of score function, and derivatives cumulant generating functions.
- In case of multiviarate data, beside the methods of transformation to univariate data, graphical assessments can also be applied through the plots of multivariate empirical cumulant functions.
+Description: Graphical methods testing multivariate normality assumption. Methods including assessing score function, and cumulant generating functions, independent transformations and linear transformations. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: Rdpack, ggplot2, stats, Matrix, MatrixExtra, MASS
